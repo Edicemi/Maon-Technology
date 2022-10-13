@@ -4,7 +4,9 @@ const { body } = require("express-validator");
 const {
   register,
   login
-} = require("../controllers/index");
+} = require("../controllers/users");
+
+const {questionPost} = require("../controllers/main");
 
 const { validateUserToken } = require("../lib/ath");
 
@@ -21,6 +23,6 @@ router.post(
 );
 
 router.post("/login", login);
-
+router.post("/question", validateUserToken, questionPost);
 
 module.exports = router;

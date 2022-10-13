@@ -6,7 +6,6 @@ const app = express();
 const userRoute = require('./routes/users');
 
 
-
 //middleware
 app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true }));
@@ -15,6 +14,7 @@ app.use(express.json());
 
 // //api routes
 app.use('/v1', userRoute);
+
 
 app.get("/", (req, res) => {
   res.json({ message: "This is the main stack-overflow application entry point" });
