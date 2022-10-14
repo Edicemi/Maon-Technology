@@ -39,7 +39,7 @@ exports.register = async (req, res, next) => {
           body: `Welcome to StackOverflow ${fullname}, so awesome to have you here.`,
         },
         async (err, data) => {
-          await sendMail(data, "Twitee Onboarding mail", email);
+          await sendMail(data, "Stackoverflow Welcome mail", email);
         }
       );
 
