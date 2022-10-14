@@ -63,6 +63,19 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 #### Answer a question
 
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "answer": "
+  "questionPostId": "
+  "user_id": "
+  }' \
+    https:
+```
 
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `answer`    | `string` | **Required**. answer is required    |
+| `questionPostId` | `string` | **Required**. questionPostId is required |
+| `user_id` | `string` | **Required**. user_id is required |
 
 Copyright (c) 2022 Victoria

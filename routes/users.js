@@ -6,7 +6,10 @@ const {
   login
 } = require("../controllers/users");
 
-const {questionPost} = require("../controllers/main");
+const {
+  questionPost,
+  answer
+} = require("../controllers/dashboard");
 
 const { validateUserToken } = require("../lib/ath");
 
@@ -23,6 +26,9 @@ router.post(
 );
 
 router.post("/login", login);
+
+//routes for dashboard
 router.post("/question", validateUserToken, questionPost);
+router.post("/answer", validateUserToken, answer);
 
 module.exports = router;
