@@ -31,12 +31,12 @@ exports.answer = async (req, res, next) => {
   try {
     const {postId} = req.params
     const {answer} = req.body
-    const newAnswer = await Comment({
+    const newAnswer = await Answer({
         userId: req.decoded.user_id,
         questionPostId: postId,
         answer
     })
-    const post = await Answer.findById(questionPostId);
+    const post = await Answer.findById(postId);
     post.answer.push(newAnswer);
     await post.save()
     await newAnswer.save()

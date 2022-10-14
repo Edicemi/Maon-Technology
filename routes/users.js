@@ -29,6 +29,6 @@ router.post("/login", login);
 
 //routes for dashboard
 router.post("/question", validateUserToken, questionPost);
-router.post("/answer", validateUserToken, answer);
+router.post("/answer/:postId", validateUserToken, answer);
 
 module.exports = router;

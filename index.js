@@ -31,13 +31,13 @@ app.use(function (error, req, res, next) {
   if (!error.code) {
     return res.status(500).json({
       message: error.message || "Error processing request",
-      status: false,
+      status: 500,
       data: null,
     });
   }
   return res.status(error.code).json({
     message: error.message,
-    status: false,
+    status: 500,
     data: null,
   });
 });
