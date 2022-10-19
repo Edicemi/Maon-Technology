@@ -37,7 +37,7 @@ exports.answer = async (req, res, next) => {
         answer
     })
     const post = await Answer.findById(postId);
-    post.answer.push(newAnswer);
+    post.questionAnswer.push(newAnswer);
     await post.save()
     await newAnswer.save()
     return res.status(200).json({
